@@ -1,1 +1,6 @@
 .xml
+*.xml
+*.xml
+.idea/vcs.xml
+.idea/my_leetcode.iml
+.idea/vcs.xml
