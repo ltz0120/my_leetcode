@@ -10,11 +10,12 @@ class Solution:
         :type head: ListNode
         :rtype: ListNode
         """
+        if not head:
+            return []
         out = self.helper(head)
         return out
 
     def helper(self, head):
-        print(head.val)
         if head.next:
             output = self.helper(head.next)
             head.next.next = head
