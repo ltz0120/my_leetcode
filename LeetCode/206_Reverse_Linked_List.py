@@ -4,6 +4,8 @@ class ListNode:
         self.val = x
         self.next = None
 
+
+#Solve by recursion
 class Solution:
     def reverseList(self, head):
         """
@@ -24,6 +26,30 @@ class Solution:
             return output
         else:
             return head
+
+# Solve by Stack iteration
+class Solution:
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head:
+            return []
+
+        s = []
+        while head:
+            s.append(head)
+            head = head.next
+        new_head = s.pop(-1)
+        out = new_head
+        print(len(s))
+        while s:
+            new_head.next = s.pop(-1)
+            new_head = new_head.next
+        new_head.next = None
+        return out
+
 
 if __name__ == "__main__":
     linkedlist = [1,2,3,4,5]  # expected output: [5,4,3,2,1]
